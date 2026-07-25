@@ -6,14 +6,18 @@ defineProps<{
   isSidebarOpen: boolean;
 }>();
 
+// ✅ Tambahkan emit 'shutdown' di sini
 defineEmits<{
   'toggle-sidebar': [];
   'toggle-theme': [];
+  shutdown: [];
 }>();
 </script>
 
 <template>
-  <header class="h-16 border-b-4 border-primary px-4 md:px-10 flex items-center justify-between bg-background shrink-0 z-50">
+  <header
+    class="h-16 border-b-4 border-primary px-4 md:px-10 flex items-center justify-between bg-background shrink-0 z-50"
+  >
     <div class="flex items-center gap-3 md:gap-4">
       <button
         class="w-10 h-10 flex flex-col items-center justify-center gap-1.5 hover:bg-surface-container rounded transition-colors focus:outline-none"
@@ -34,7 +38,9 @@ defineEmits<{
           :class="isSidebarOpen ? '-rotate-45 -translate-y-2' : ''"
         ></span>
       </button>
-      <span class="text-lg md:text-xl font-display font-bold tracking-tight">PORTFOLIO_OS_V1.0</span>
+      <span class="text-lg md:text-xl font-display font-bold tracking-tight"
+        >PORTFOLIO_OS_V1.0</span
+      >
     </div>
 
     <div class="flex items-center gap-2">
@@ -45,7 +51,14 @@ defineEmits<{
       >
         <component :is="isDark ? Sun : Moon" :size="20" />
       </button>
-      <button class="p-2 hover:bg-surface-container rounded transition-colors" aria-label="Power">
+
+      <!-- ✅ Tambahkan @click="$emit('shutdown')" di tombol ini -->
+      <button
+        class="p-2 hover:bg-surface-container rounded transition-colors text-accent-pink hover:bg-accent-pink/20"
+        aria-label="Power"
+        title="Shutdown System"
+        @click="$emit('shutdown')"
+      >
         <Power :size="20" />
       </button>
     </div>

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { onMounted, ref, watchEffect } from 'vue';
+import SnakeGameOverlay from './components/SnakeGameOverlay.vue';
 import AppFooter from './components/AppFooter.vue';
 import AppHeader from './components/AppHeader.vue';
 import AppSidebar from './components/AppSidebar.vue';
@@ -12,6 +13,7 @@ import { sidebarLinks, type NavTab } from './data/portfolio';
 const activeTab = ref<NavTab>('SYSTEM');
 const isDark = ref(localStorage.getItem('theme') === 'dark');
 const isSidebarOpen = ref(true);
+const isShutdown = ref(false);
 
 const closeSidebarOnMobile = () => {
   if (window.innerWidth < 1024) {
@@ -44,11 +46,13 @@ watchEffect(() => {
   <div
     class="min-h-screen flex flex-col overflow-hidden selection:bg-accent-yellow"
   >
+    <!-- 1. Tambahkan @shutdown="isShutdown = true" di sini -->
     <AppHeader
       :is-dark="isDark"
       :is-sidebar-open="isSidebarOpen"
       @toggle-sidebar="toggleSidebar"
       @toggle-theme="toggleDark"
+      @shutdown="isShutdown = true"
     />
 
     <div class="flex flex-1 overflow-hidden relative">
@@ -79,5 +83,8 @@ watchEffect(() => {
         </div>
       </main>
     </div>
+
+    <!-- 2. Pasang Komponen Snake Game Overlay di Paling Bawah -->
+    <SnakeGameOverlay :is-open="isShutdown" @close="isShutdown = false" />
   </div>
 </template>

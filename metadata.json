@@ -1,0 +1,8 @@
+{
+  "name": "Retro Portfolio OS",
+  "description": "A neo-retro, cartoon brutalist portfolio inspired by vintage operating systems, featuring a terminal-style interface and bold technical accents.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

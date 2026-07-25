@@ -111,7 +111,7 @@ export const projects: Project[] = [
   {
     title: 'VISUAL_IMAGE_ID.SYS',
     accent: 'bg-accent-pink',
-    image: '/visual-image-bg.jpg',
+    image: 'visual-image-bg.jpg',
     description:
       'A corporate and event portfolio platform for an Event Organizer agency. Showcases and archives documentation for major events from 2009 to the present.',
     tags: ['WORDPRESS', 'ELEMENTOR'],
@@ -120,7 +120,7 @@ export const projects: Project[] = [
   {
     title: 'BERTAMBAH_BAIK.APP',
     accent: 'bg-accent-yellow',
-    image: '/tambah-baik-bg.jpg',
+    image: 'tambah-baik-bg.jpg',
     description:
       'A modern web blog and digital media platform built with WordPress. Optimised for clean typography, seamless content publishing, and responsive layout for readers.',
     tags: ['WORDPRESS', 'ELEMENTOR'],
@@ -129,7 +129,7 @@ export const projects: Project[] = [
   {
     title: 'Nomdas_Travel.app',
     accent: 'bg-accent-green',
-    image: '/nomads-bg.jpg',
+    image: 'nomads-bg.jpg',
     description:
       'A responsive full-stack travel booking platform built with Laravel. Features seamless tour package exploration, dynamic checkout management, and an integrated administrative dashboard',
     tags: ['LARAVEL', 'MYSQL', 'BOOTSTRAP'],
@@ -138,7 +138,7 @@ export const projects: Project[] = [
   {
     title: 'NTT_Explore.sys',
     accent: 'bg-accent-green',
-    image: '/sig-bg.jpg',
+    image: 'sig-bg.jpg',
     description:
       'A Web-based Geographic Information System (GIS) designed to map and explore tourism destinations across East Nusa Tenggara (NTT) and Lombok. Features interactive spatial data visualization and location tracking.',
     tags: ['SIG', 'NETLIFY', 'BOOTSTRAP'],

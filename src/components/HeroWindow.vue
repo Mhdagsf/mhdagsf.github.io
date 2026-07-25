@@ -3,6 +3,9 @@ import { Rocket, Download } from 'lucide-vue-next';
 import { systemSpecs } from '../data/portfolio';
 import WindowTitleBar from './WindowTitleBar.vue';
 
+// 💡 IMPORT FILE PDF LANGSUNG DARI PUBLIC / ASSETS
+// Vite akan otomatis menangani URL base & hashing-nya dengan sempurna!
+
 const driveSpec = systemSpecs.find((spec) => spec.label === 'DRIVE:');
 const driveValue = driveSpec ? driveSpec.value : '';
 </script>
@@ -34,13 +37,14 @@ const driveValue = driveSpec ? driveSpec.value : '';
         </p>
 
         <!-- Ganti elemen tombol lama kamu dengan tag <a> di bawah ini -->
+
         <a
-          href="/CV-muhammadAgis.pdf"
-          download="CV-muhammadAgis.pdf"
-          class="inline-flex items-center gap-2 px-5 py-2.5 font-mono font-bold text-xs uppercase bg-[#e1c38f] text-black border-4 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all no-underline cursor-pointer"
+          href="./cv.pdf"
+          download="CV-Muhammad-Agis-Fadillah.pdf"
+          target="_blank"
+          class="brutalist-button bg-accent-yellow mt-6 px-8 py-3 text-xs font-bold uppercase tracking-widest inline-flex items-center gap-3 w-fit"
         >
-          <Download :size="16" />
-          <span>DOWNLOAD_CV.EXE</span>
+          <Rocket :size="18" /> DOWNLOAD_CV.EXE
         </a>
       </div>
     </div>

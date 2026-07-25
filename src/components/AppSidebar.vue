@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { HelpCircle, ListRestart } from 'lucide-vue-next';
 import { profile, type NavTab, type SidebarLink } from '../data/portfolio';
 
@@ -12,6 +13,18 @@ defineEmits<{
   close: [];
   select: [tab: NavTab];
 }>();
+
+// Helper untuk menyesuaikan path avatar dengan BASE_URL GitHub Pages
+const computedAvatarUrl = computed(() => {
+  // Ambil BASE_URL bawaan Vite
+  // @ts-ignore
+  const base = import.meta.env.BASE_URL || '/';
+
+  // Hapus karakter slash diawal jika ada agar tidak double slash
+  const cleanPath = profile.avatarUrl.replace(/^\//, '');
+
+  return `${base}${cleanPath}`;
+});
 </script>
 
 <template>
@@ -36,8 +49,9 @@ defineEmits<{
         <div
           class="w-20 h-20 bg-background border-4 border-primary rounded-full overflow-hidden shadow-[4px_4px_0px_0px_var(--shadow-color)] flex items-center justify-center"
         >
+          <!-- Menggunakan computedAvatarUrl yang aman untuk GitHub Pages -->
           <img
-            :src="profile.avatarUrl"
+            :src="computedAvatarUrl"
             alt="Avatar"
             class="w-full h-full object-cover filter contrast-125 grayscale"
           />

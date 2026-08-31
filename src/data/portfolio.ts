@@ -59,7 +59,7 @@ export interface HistoryItem {
 }
 
 export const profile = {
-  name: 'Muhammad Agis Fadillah',
+  name: 'MUHAMMAD AGIS FADILLAH',
   status: 'Full Stack Developer',
   avatarUrl: '/avatar.jpeg',
   githubUrl: 'https://github.com/Mhdagsf',
